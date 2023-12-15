@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const NotFound = () => {
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-100px)] flex-row">
+    <div className="flex items-center justify-center mt-10 flex-row">
       <div className="text-center">
         <h1 className="text-secondary text-2xl mb-2 font-bold">Not Found</h1>
         <Image
@@ -14,8 +14,8 @@ const NotFound = () => {
           priority
           className="mb-4 rounded-2xl shadow-xl"
         />
-        <p className="text-primary mb-4">
-          This isn't the page you're looking for.
+        <p className="text-xl text-primary mb-4">
+          "This isn't the page you're looking for."
         </p>
         <Link href="/" className="text-secondary hover:underline">
           Return Home

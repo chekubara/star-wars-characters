@@ -16,8 +16,10 @@ const NavLink = ({ href, children }: Props) => {
   return (
     <Link
       href={href}
-      className={`hover:underline ${
-        pathname === href ? "text-secondary" : ""
+      className={`h-full px-4 flex items-center hover:underline border-b-2 ${
+        pathname === href
+          ? "text-secondary border-secondary"
+          : "border-transparent"
       }  `}
     >
       {children}
