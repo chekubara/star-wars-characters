@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Ubuntu } from "next/font/google";
+import Header from "./components/layout/Header";
 import "./globals.css";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
+const ubuntu = Ubuntu({ weight: ["300", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Star Wars Characters",
-  description: "Simple Star Wars Characters app built with Next.js",
+  description: "Simple Star Wars character cards page",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body
+        className={`${ubuntu.className} bg-background-secondary text-primary`}
+      >
+        <Header />
+        <main className="container p-4">{children}</main>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
