@@ -2,7 +2,6 @@
 
 import React from "react";
 import { usePeople } from "@/app/hooks/usePeople";
-import Link from "next/link";
 import Pagination from "./Pagination";
 
 interface Props {
@@ -23,6 +22,7 @@ const People = ({ page }: Props) => {
         isPrev={data?.previous !== null}
         isNext={data?.next !== null}
         url="/page"
+        firstPageUrl="/"
       />
     </>
   );

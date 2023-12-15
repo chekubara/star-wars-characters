@@ -9,7 +9,7 @@ const Home = async () => {
 
   return (
     <>
-      <PageTitle>StarWars Characters Page</PageTitle>
+      <PageTitle>Welcome to StarWars Characters</PageTitle>
       <HydrationBoundary state={dehydrate(queryClient)}>
         <People page={defaultPage} />
       </HydrationBoundary>

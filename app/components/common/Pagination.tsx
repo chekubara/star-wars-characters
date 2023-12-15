@@ -6,13 +6,20 @@ interface Props {
   page: number;
   isPrev: boolean;
   isNext: boolean;
+  firstPageUrl?: string;
 }
 
-const Pagination = ({ url, page, isPrev, isNext }: Props) => {
+const Pagination = ({ url, page, isPrev, isNext, firstPageUrl }: Props) => {
   return (
     <div className="flex space-x-5">
       {isPrev ? (
-        <Link href={`${url}/${page - 1}`}>« Previous</Link>
+        <Link
+          href={`${
+            page - 1 === 1 && firstPageUrl ? firstPageUrl : `${url}/${page - 1}`
+          }`}
+        >
+          « Previous
+        </Link>
       ) : (
         <div className="opacity-50">« Previous</div>
       )}
