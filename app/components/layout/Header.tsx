@@ -10,15 +10,17 @@ const navLinks: { title: string; path: string }[] = [
 
 const Header = () => {
   return (
-    <nav className="bg-background text-white p-4">
-      <div className="container flex justify-between items-center">
-        <BrandLogo />
-        <div className="flex space-x-4">
-          {navLinks.map((link) => (
-            <NavLink href={link.path} key={link.path}>
-              {link.title}
-            </NavLink>
-          ))}
+    <nav className="bg-background text-white">
+      <div className="container p-4">
+        <div className="flex justify-between items-center">
+          <BrandLogo />
+          <div className="flex space-x-4">
+            {navLinks.map((link) => (
+              <NavLink href={link.path} key={link.path}>
+                {link.title}
+              </NavLink>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
