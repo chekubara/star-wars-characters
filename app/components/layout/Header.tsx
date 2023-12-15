@@ -1,10 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import NavLink from "@/app/components/NavLink";
-import BrandLogo from "@/app/components/BrandLogo";
+import NavLink from "./NavLink";
+import BrandLogo from "./BrandLogo";
 
 const navLinks: { title: string; path: string }[] = [
   { title: "Home", path: "/" },
+  { title: "Person", path: "/person" },
   { title: "Favorites", path: "/favorites" },
 ];
 

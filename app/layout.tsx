@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import Header from "./components/layout/Header";
+import ReactQueryProvider from "./components/providers/ReactQueryProvider";
 import "./globals.css";
 
 const ubuntu = Ubuntu({ weight: ["300", "700"], subsets: ["latin"] });
@@ -16,8 +17,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={`${ubuntu.className} bg-background-secondary text-primary`}
       >
-        <Header />
-        <main className="container p-4">{children}</main>
+        <ReactQueryProvider>
+          <Header />
+          <main className="container p-4">{children}</main>
+        </ReactQueryProvider>
       </body>
     </html>
   );
