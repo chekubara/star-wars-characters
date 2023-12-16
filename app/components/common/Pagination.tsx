@@ -11,7 +11,7 @@ interface Props {
 
 const Pagination = ({ url, page, isPrev, isNext, firstPageUrl }: Props) => {
   return (
-    <div className="flex space-x-5 justify-center font-semibold">
+    <div className="flex space-x-3 justify-center font-semibold">
       {isPrev ? (
         <Link
           className="hover:text-secondary"
