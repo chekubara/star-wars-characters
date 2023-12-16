@@ -11,7 +11,7 @@ interface Props {
 
 const Pagination = ({ url, page, isPrev, isNext, firstPageUrl }: Props) => {
   return (
-    <div className="flex space-x-5">
+    <div className="flex space-x-5 justify-center">
       {isPrev ? (
         <Link
           href={`${
@@ -23,7 +23,9 @@ const Pagination = ({ url, page, isPrev, isNext, firstPageUrl }: Props) => {
       ) : (
         <div className="opacity-50">« Previous</div>
       )}
-      <div>Page {page}</div>
+      <span>|</span>
+      <div>Page: {page}</div>
+      <span>|</span>
       {isNext ? (
         <Link href={`${url}/${page + 1}`}>Next »</Link>
       ) : (

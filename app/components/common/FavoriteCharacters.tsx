@@ -15,7 +15,7 @@ const FavoriteCharacters = () => {
       {favorites.map((character) => (
         <li
           key={character.id}
-          className="w-full xs:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4"
+          className="w-full xs:w-1/2 md:w-1/3 xl:w-1/5 pr-4 pb-4"
         >
           <CharacterCard name={character.name} id={character.id} />
         </li>

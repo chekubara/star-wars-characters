@@ -32,7 +32,7 @@ const CharacterCard = ({ name, id }: Props) => {
       <div className="absolute top-0 left-0 w-full bg-background p-4 text-xl text-secondary font-bold bg-opacity-50">
         {name}
       </div>
-      <div className="absolute bottom-0 left-0 w-full bg-background text-xl text-secondary font-bold bg-opacity-50 ">
+      <div className="absolute bottom-0 left-0 w-full bg-background p-4 bg-opacity-50">
         <FavoriteCharacterButton id={id} name={name} />
       </div>
     </Link>

@@ -23,7 +23,11 @@ const FavoriteCharacterButton = ({ id, name }: Props) => {
   return (
     <button
       type="button"
-      className="flex space-x-2 items-center p-4"
+      className={
+        isFavorite
+          ? "flex space-x-2 items-center p-2 border-2 border-secondary rounded-xl"
+          : "flex space-x-2 items-center p-2 border-2 border-primary rounded-xl"
+      }
       onClick={clickHandler}
     >
       <svg
