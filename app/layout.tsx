@@ -5,7 +5,7 @@ import Footer from "./components/layout/Footer";
 import ReactQueryProvider from "./components/providers/ReactQueryProvider";
 import "./globals.css";
 
-const ubuntu = Ubuntu({ weight: ["300", "700"], subsets: ["latin"] });
+const ubuntu = Ubuntu({ weight: ["300", "500", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Star Wars Characters",
