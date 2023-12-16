@@ -13,7 +13,11 @@ const CharacterDetails = ({ id }: Props) => {
   const { data: character } = useCharacter(id);
   if (!character) return notFound();
   const { data: planet } = usePlanet(getPlanetId(character.homeworld));
-  return <span>data?.name (HomeWorld: {planet?.name})</span>;
+  return (
+    <span>
+      {character?.name} (HomeWorld: {planet?.name})
+    </span>
+  );
 };
 
 export default CharacterDetails;

@@ -1,4 +1,4 @@
-import { slugify } from "@/utils/slugify";
+import { slugify } from "@/service/slugify";
 import Link from "next/link";
 import React from "react";
 

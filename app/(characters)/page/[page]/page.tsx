@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import { QueryClient } from "@tanstack/react-query";
 import HydrationBoundaryProvider from "@/app/components/providers/HydrationBoundryProvider";
 import { prefetchCharacters } from "@/app/hooks/useCharacters";
 import PageTitle from "@/app/components/common/PageTitle";
 import Characters from "@/app/components/common/Characters";
+import queryClient from "@/service/queryClient";
 
 interface Props {
   params: {
@@ -23,7 +23,6 @@ export async function generateMetadata({ params }: Props) {
 
 const CharactersPage = async ({ params }: Props) => {
   const page = parseInt(params.page);
-  const queryClient = new QueryClient();
   await prefetchCharacters(queryClient, page);
 
   return (

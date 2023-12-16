@@ -1,11 +1,14 @@
 import { notFound } from "next/navigation";
-import { QueryClient } from "@tanstack/react-query";
 import { prefetchCharacter, fetchCharacter } from "@/app/hooks/useCharacter";
 import { prefetchPlanet } from "@/app/hooks/usePlanet";
 import HydrationBoundaryProvider from "@/app/components/providers/HydrationBoundryProvider";
 import PageTitle from "@/app/components/common/PageTitle";
 import CharacterDetails from "@/app/components/common/CharactersDetails";
 import { getPlanetId } from "@/types/Planet";
+import { prefetchSpecies } from "@/app/hooks/useSpecies";
+import { getSpeciesId } from "@/types/Species";
+import { slugify } from "@/service/slugify";
+import queryClient from "@/service/queryClient";
 
 interface Props {
   params: {
@@ -16,10 +19,11 @@ interface Props {
 
 export async function generateMetadata({ params }: Props) {
   const id = parseInt(params.id);
+  const slug = params.slug;
   if (isNaN(id)) notFound();
 
   const character = await fetchCharacter(id);
-  if (!character) notFound();
+  if (!character || slugify(character.name) !== slug) notFound();
 
   return {
     title: `${character.name} | Star Wars Characters`,
@@ -28,10 +32,15 @@ export async function generateMetadata({ params }: Props) {
 
 const CharacterPage = async ({ params }: Props) => {
   const id = parseInt(params.id);
-  const queryClient = new QueryClient();
   const character = await prefetchCharacter(queryClient, id);
-  if (character)
-    await prefetchPlanet(queryClient, getPlanetId(character.homeworld));
+  if (character) {
+    await Promise.all([
+      prefetchPlanet(queryClient, getPlanetId(character.homeworld)),
+      ...character.species.map((s) =>
+        prefetchSpecies(queryClient, getSpeciesId(s))
+      ),
+    ]);
+  }
 
   return (
     <>
