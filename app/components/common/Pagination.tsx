@@ -11,9 +11,10 @@ interface Props {
 
 const Pagination = ({ url, page, isPrev, isNext, firstPageUrl }: Props) => {
   return (
-    <div className="flex space-x-5 justify-center">
+    <div className="flex space-x-5 justify-center font-semibold">
       {isPrev ? (
         <Link
+          className="hover:text-secondary"
           href={`${
             page - 1 === 1 && firstPageUrl ? firstPageUrl : `${url}/${page - 1}`
           }`}
@@ -27,7 +28,9 @@ const Pagination = ({ url, page, isPrev, isNext, firstPageUrl }: Props) => {
       <div>Page: {page}</div>
       <span>|</span>
       {isNext ? (
-        <Link href={`${url}/${page + 1}`}>Next »</Link>
+        <Link className="hover:text-secondary" href={`${url}/${page + 1}`}>
+          Next »
+        </Link>
       ) : (
         <div className="opacity-50">Next »</div>
       )}
