@@ -1,4 +1,4 @@
-import { Person } from "@/types/Person";
+import { slugify } from "@/utils/slugify";
 import Link from "next/link";
 import React from "react";
 
@@ -10,7 +10,7 @@ interface Props {
 const CharacterCard = ({ name, id }: Props) => {
   return (
     <Link
-      href={`/person/${id}`}
+      href={`/character/${slugify(name)}/${id}`}
       className="rounded-md bg-background p-4 shadow-md"
     >
       {name}

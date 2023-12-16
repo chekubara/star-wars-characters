@@ -10,7 +10,7 @@ interface Props {
   page: number;
 }
 
-const People = ({ page }: Props) => {
+const Characters = ({ page }: Props) => {
   const { data } = useCharacters(page);
   return (
     <>
@@ -22,7 +22,7 @@ const People = ({ page }: Props) => {
           >
             <CharacterCard
               name={character.name}
-              id={getCharacterId(character)}
+              id={getCharacterId(character.url)}
             />
           </li>
         ))}
@@ -38,4 +38,4 @@ const People = ({ page }: Props) => {
   );
 };
 
-export default People;
+export default Characters;

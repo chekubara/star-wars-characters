@@ -15,13 +15,11 @@ const fetchCharacters = async (page: number = 1): Promise<PaginationResponse<Cha
     return res.json()
 }
 
-const prefetchCharacters = async (page: number = 1): Promise<QueryClient> => {
-    const queryClient = new QueryClient()
+const prefetchCharacters = async (queryClient: QueryClient, page: number = 1): Promise<void> => {
     await queryClient.prefetchQuery({
         queryKey: getQueryKey(page), 
         queryFn:  () => fetchCharacters(page),
     })
-    return queryClient
 }
 
 const useCharacters = (page: number = 1) => {

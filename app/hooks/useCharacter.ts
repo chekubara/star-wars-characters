@@ -5,7 +5,7 @@ import { API_URL } from "./const"
 const getQueryKey = (id: number) =>  ['character', {id}]
 
 const fetchCharacter = async (id: number): Promise<Character> => {
-    const res = await fetch(`${API_URL}/people/${id}}`)
+    const res = await fetch(`${API_URL}/people/${id}/`)
 
     if (!res.ok) {
         throw new Error(res.statusText)
@@ -14,14 +14,13 @@ const fetchCharacter = async (id: number): Promise<Character> => {
     return res.json()
 }
 
-const prefetchCharacter = async (id: number): Promise<QueryClient> => {
-    const queryClient = new QueryClient()
+const prefetchCharacter = async (queryClient: QueryClient, id: number): Promise<Character | undefined> => {
     await queryClient.prefetchQuery({
         queryKey: getQueryKey(id), 
         queryFn:  () => fetchCharacter(id),
     })
-    queryClient.getQueryState(['people', id])
-    return queryClient
+    
+    return queryClient.getQueryData<Character>(getQueryKey(id))
 }
 
 const useCharacter = (id: number) => {
@@ -31,4 +30,4 @@ const useCharacter = (id: number) => {
     })
 }
 
-export { useCharacter, prefetchCharacter }
+export { useCharacter, fetchCharacter, prefetchCharacter }

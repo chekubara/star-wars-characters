@@ -11,7 +11,6 @@ interface Props {
 
 const NavLink = ({ href, children }: Props) => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <Link

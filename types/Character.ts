@@ -17,8 +17,8 @@ export type Character = {
     edited: string
 }
 
-export const getCharacterId = (character: Character): number => {
-    const id = character.url.split('/').filter(Boolean).pop()
+export const getCharacterId = (url: string): number => {
+    const id = url.split('/').filter(Boolean).pop()
     if (!id) throw new Error('Invalid character url')
     return parseInt(id)
 }
