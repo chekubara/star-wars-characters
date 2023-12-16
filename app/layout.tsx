@@ -19,7 +19,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       >
         <ReactQueryProvider>
           <Header />
-          <main className="container p-4">{children}</main>
+          <main className="md:container max-md:p-4 pt-4">{children}</main>
         </ReactQueryProvider>
       </body>
     </html>

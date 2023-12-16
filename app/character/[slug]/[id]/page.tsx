@@ -44,7 +44,7 @@ const CharacterPage = async ({ params }: Props) => {
 
   return (
     <>
-      <PageTitle>StarWars Character</PageTitle>
+      <PageTitle>{character?.name}</PageTitle>
       <HydrationBoundaryProvider queryClient={queryClient}>
         <CharacterDetails id={id} />
       </HydrationBoundaryProvider>

@@ -12,6 +12,9 @@ const config: Config = {
       padding: "2rem",
     },
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       colors: {
         primary: "#FFFFFF",
         secondary: "#FFE81F",

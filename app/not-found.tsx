@@ -8,7 +8,7 @@ const NotFound = () => {
         <h1 className="text-secondary text-2xl mb-2 font-bold">Not Found</h1>
         <Image
           src="/404.jpg"
-          alt="Vercel Logo"
+          alt="Obi-Wan Kenobi waving his hand"
           width={400}
           height={300}
           priority
