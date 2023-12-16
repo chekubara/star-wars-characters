@@ -1,17 +1,17 @@
 import PageTitle from "./components/common/PageTitle";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { prefetchPeople } from "@/app/hooks/usePeople";
-import People from "./components/common/People";
+import { prefetchCharacters } from "@/app/hooks/useCharacters";
+import Characters from "./components/common/Characters";
 
 const Home = async () => {
   const defaultPage = 1;
-  const queryClient = await prefetchPeople(defaultPage);
+  const queryClient = await prefetchCharacters(defaultPage);
 
   return (
     <>
       <PageTitle>Welcome to StarWars Characters</PageTitle>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <People page={defaultPage} />
+        <Characters page={defaultPage} />
       </HydrationBoundary>
     </>
   );

@@ -1,4 +1,4 @@
-type Person = {
+export type Character = {
     name: string
     birth_year: string
     eye_color: string
@@ -15,4 +15,10 @@ type Person = {
     url: string
     created: string
     edited: string
+}
+
+export const getCharacterId = (character: Character): number => {
+    const id = character.url.split('/').filter(Boolean).pop()
+    if (!id) throw new Error('Invalid character url')
+    return parseInt(id)
 }

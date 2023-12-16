@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { prefetchPeople } from "@/app/hooks/usePeople";
+import { prefetchCharacters } from "@/app/hooks/useCharacters";
 import PageTitle from "@/app/components/common/PageTitle";
-import People from "@/app/components/common/People";
+import Characters from "@/app/components/common/Characters";
 
 interface Props {
   params: {
@@ -24,13 +24,13 @@ export async function generateMetadata({ params }: Props) {
 
 const PeoplePage = async ({ params }: Props) => {
   const page = parseInt(params.page);
-  const queryClient = await prefetchPeople(page);
+  const queryClient = await prefetchCharacters(page);
 
   return (
     <>
       <PageTitle>StarWars Characters Page {page}</PageTitle>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <People page={page} />
+        <Characters page={page} />
       </HydrationBoundary>
     </>
   );
