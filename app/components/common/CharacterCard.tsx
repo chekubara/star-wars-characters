@@ -19,7 +19,7 @@ const CharacterCard = ({ name, id }: Props) => {
   return (
     <Link
       href={`/character/${slugify(name)}/${id}`}
-      className="rounded-2xl relative w-full block border-4 border-background hover:border-primary transition-all overflow-hidden"
+      className="rounded-2xl relative w-full block border-4 border-background hover:border-secondary transition-all overflow-hidden"
       aria-label={`View ${name} details`}
     >
       <Image
