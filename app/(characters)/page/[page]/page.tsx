@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
   if (isNaN(page) || page < 1) notFound();
 
   return {
-    title: `Star Wars Characters | Page ${page}`,
+    title: `Page ${page} | Star Wars Characters`,
   };
 }
 

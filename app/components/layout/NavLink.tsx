@@ -1,8 +1,8 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 
 interface Props {
   href: string;
@@ -16,9 +16,9 @@ const NavLink = ({ href, children }: Props) => {
   return (
     <Link
       href={href}
-      className={`h-full px-4 flex items-center hover:text-secondary font-medium ${
-        isActive ? "text-secondary border-secondary" : "border-transparent"
-      }  `}
+      className={`h-full px-4 flex items-center font-medium hover:bg-secondary hover:text-background ${
+        isActive ? "text-secondary" : "border-transparent"
+      }`}
     >
       {children}
     </Link>

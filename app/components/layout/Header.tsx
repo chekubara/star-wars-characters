@@ -1,10 +1,16 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import NavLink from "./NavLink";
 import BrandLogo from "./BrandLogo";
+import Navigation from "./Navigation";
 
-const navLinks: { title: string; path: string }[] = [
+const FavoritesLabel = dynamic(() => import("./FavoritesLabel"), {
+  ssr: false,
+  loading: () => <>My Favorites</>,
+});
+
+const navLinks: { title: React.ReactNode; path: string }[] = [
   { title: "Home", path: "/" },
-  { title: "Favorites", path: "/favorites" },
+  { title: <FavoritesLabel />, path: "/favorites" },
 ];
 
 const Header = () => {
@@ -13,13 +19,7 @@ const Header = () => {
       <div className="md:container max-md:px-4">
         <div className="flex h-[60px] justify-between items-center">
           <BrandLogo />
-          <nav className="flex space-x-4 h-full max-xs:hidden">
-            {navLinks.map((link) => (
-              <NavLink href={link.path} key={link.path}>
-                {link.title}
-              </NavLink>
-            ))}
-          </nav>
+          <Navigation routes={navLinks} />
         </div>
       </div>
     </header>
