@@ -57,12 +57,16 @@ const CharacterCard = ({ name, id }: Props) => {
           animate={
             hovered ? { rotateY: 0, scale: 1.15 } : { rotateY: 20, scale: 1 }
           }
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={{
+            type: "spring",
+            stiffness: hovered ? 500 : 50,
+            damping: 20,
+          }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           onFocus={() => setHovered(true)}
           onBlur={() => setHovered(false)}
-          initial={false}
+          // initial={false}
         >
           <Link
             href={`/character/${slugify(name)}/${id}`}
@@ -73,7 +77,11 @@ const CharacterCard = ({ name, id }: Props) => {
             {NameComponent}
             <motion.div
               className="absolute bottom-0 left-0 w-full bg-background p-4 pb-6 bg-opacity-50"
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              transition={{
+                type: "spring",
+                stiffness: hovered ? 300 : 50,
+                damping: 20,
+              }}
               initial={false}
               animate={{
                 y: hovered ? 8 : 100,

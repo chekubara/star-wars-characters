@@ -5,7 +5,7 @@ const BrandLogo = () => {
   return (
     <Link
       href="/"
-      className="text-2xl font-bold text-secondary hover:text-primary"
+      className="text-xl font-bold text-secondary hover:text-primary tracking-tighter"
     >
       StarWars Characters
     </Link>

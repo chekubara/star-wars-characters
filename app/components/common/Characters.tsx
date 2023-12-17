@@ -5,6 +5,7 @@ import { useCharacters } from "@/app/hooks/useCharacters";
 import Pagination from "./Pagination";
 import CharacterCard from "./CharacterCard";
 import { getCharacterId } from "@/types/Character";
+import { List, ListItem } from "./List";
 
 interface Props {
   page: number;
@@ -14,19 +15,16 @@ const Characters = ({ page }: Props) => {
   const { data } = useCharacters(page);
   return (
     <>
-      <ul className="flex flex-wrap">
+      <List>
         {data?.results.map((character) => (
-          <li
-            key={character.url}
-            className="w-full xs:w-1/2 md:w-1/3 xl:w-1/5 pr-4 pb-4"
-          >
+          <ListItem>
             <CharacterCard
               name={character.name}
               id={getCharacterId(character.url)}
             />
-          </li>
+          </ListItem>
         ))}
-      </ul>
+      </List>
       <Pagination
         page={page}
         isPrev={data?.previous !== null}

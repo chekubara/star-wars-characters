@@ -1,11 +1,11 @@
 import PageTitleSkeleton from "@/app/components/skeleton/PageTitleSkeleton";
-import CharacterCardsSkeleton from "@/app/components/skeleton/CharacterCardsSkeleton";
+import CharacterDetailsSkeleton from "@/app/components/skeleton/CharacterDetailsSkeleton";
 
 const Loading = () => {
   return (
     <>
       <PageTitleSkeleton />
-      <CharacterCardsSkeleton />
+      <CharacterDetailsSkeleton />
     </>
   );
 };

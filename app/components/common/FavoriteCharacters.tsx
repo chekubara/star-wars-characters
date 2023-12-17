@@ -3,6 +3,7 @@
 import React from "react";
 import useFavoritesStore from "@/app/hooks/useFavoritesStore";
 import CharacterCard from "./CharacterCard";
+import { List, ListItem } from "./List";
 
 const FavoriteCharacters = () => {
   const { favorites } = useFavoritesStore();
@@ -11,16 +12,13 @@ const FavoriteCharacters = () => {
   }
 
   return (
-    <ul className="flex flex-wrap">
+    <List>
       {favorites.map((character) => (
-        <li
-          key={character.id}
-          className="w-full xs:w-1/2 md:w-1/3 xl:w-1/5 pr-4 pb-4"
-        >
+        <ListItem>
           <CharacterCard name={character.name} id={character.id} />
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 
