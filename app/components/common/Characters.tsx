@@ -4,8 +4,8 @@ import React from "react";
 import { useCharacters } from "@/app/hooks/useCharacters";
 import Pagination from "./Pagination";
 import CharacterCard from "./CharacterCard";
-import { getCharacterId } from "@/types/Character";
 import { List, ListItem } from "./List";
+import { getModelId } from "@/service/getModelId";
 
 interface Props {
   page: number;
@@ -20,7 +20,7 @@ const Characters = ({ page }: Props) => {
           <ListItem key={character.url}>
             <CharacterCard
               name={character.name}
-              id={getCharacterId(character.url)}
+              id={getModelId(character.url)}
             />
           </ListItem>
         ))}

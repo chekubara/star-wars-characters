@@ -20,7 +20,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       >
         <ReactQueryProvider>
           <Header />
-          <main className="md:container max-md:p-4 pt-4 min-h-[calc(100vh-132px)]">
+          <main className="xl:container max-xl:px-8 max-xl:py-4 pt-4 min-h-[calc(100vh-132px)]">
             {children}
           </main>
           <Footer />

@@ -17,7 +17,7 @@ const navLinks: { title: React.ReactNode; path: string }[] = [
 const Header = () => {
   return (
     <header className="bg-background text-white">
-      <div className="md:container max-md:px-4">
+      <div className="xl:container max-xl:px-8">
         <div className="flex h-[60px] justify-between items-center">
           <BrandLogo />
           <Navigation routes={navLinks} />

@@ -1,23 +1,16 @@
-export type Species = {
-    name: string
-    classification: string
-    designation: string
-    average_height : string
-    average_lifespan  : string
-    eye_colors : string
-    hair_colors: string
-    skin_colors: string
-    language: string
-    homeworld: string
-    people: string[]
-    films: string[]
-    url: string
-    created: string
-    edited: string
-}
+import { AbstractModel } from "./AbstractModel";
 
-export const getSpeciesId = (url: string): number => {
-    const id = url.split('/').filter(Boolean).pop()
-    if (!id) throw new Error('Invalid species url')
-    return parseInt(id)
-}
+export type Species = {
+  name: string;
+  classification: string;
+  designation: string;
+  average_height: string;
+  average_lifespan: string;
+  eye_colors: string;
+  hair_colors: string;
+  skin_colors: string;
+  language: string;
+  homeworld: string;
+  people: string[];
+  films: string[];
+} & AbstractModel;
