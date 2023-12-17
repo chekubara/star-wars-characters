@@ -24,7 +24,11 @@ const HamburgerMenu = ({ routes }: Props) => {
 
   return (
     <div className="xs:hidden">
-      <button type="button" onClick={() => setMenuOpen(true)}>
+      <button
+        type="button"
+        onClick={() => setMenuOpen(true)}
+        aria-label="Open Menu"
+      >
         <HamburgerIcon />
       </button>
       <MenuPortal show={isMenuOpen} selector="menu-portal">
