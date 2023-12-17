@@ -32,7 +32,7 @@ const CharacterCard = ({ name, id }: Props) => {
       src="/character_card.jpg"
       alt={`${name} card`}
       width={400}
-      height={530}
+      height={510}
       priority
     />
   );
