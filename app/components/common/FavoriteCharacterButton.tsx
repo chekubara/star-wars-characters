@@ -29,6 +29,7 @@ const FavoriteCharacterButton = ({ id, name }: Props) => {
           : "flex space-x-2 items-center p-2 border-2 border-primary rounded-xl"
       }
       onClick={clickHandler}
+      aria-label={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
     >
       <svg
         className={

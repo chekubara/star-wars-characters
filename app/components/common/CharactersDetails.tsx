@@ -19,22 +19,29 @@ const CharacterDetails = ({ id }: Props) => {
   const { data: planet } = usePlanet(getPlanetId(character!.homeworld));
 
   return (
-    <div className="flex flex-col p-4 border-2 border-secondary rounded-md bg-background">
-      <AttributeRow name="Birth Year">{character.birth_year}</AttributeRow>
-      <AttributeRow name="Eye Color">{character.eye_color}</AttributeRow>
-      <AttributeRow name="Gender">{character.gender}</AttributeRow>
-      <AttributeRow name="Hair Color">{character.hair_color}</AttributeRow>
-      <AttributeRow name="Height">{character.height}cm</AttributeRow>
-      <AttributeRow name="Mass">{character.mass}kg</AttributeRow>
-      <AttributeRow name="Skin Color">{character.skin_color}</AttributeRow>
-      <AttributeRow name="Homeworld">
-        <PlanetCard id={getPlanetId(character.homeworld)} />
-      </AttributeRow>
-      <AttributeRow name="Species">
-        {character.species.map((s) => (
-          <SpeciesCard key={s} id={getSpeciesId(s)} />
-        ))}
-      </AttributeRow>
+    <div className="flex max-md:flex-col max-md:space-y-4 md:flex-row md:space-x-4">
+      <div className="flex flex-col p-4 border-2 border-secondary rounded-md bg-background w-full md:w-1/2">
+        <h2 className="text-xl font-bold text-secondary">Appearance</h2>
+        <AttributeRow name="Gender">{character.gender}</AttributeRow>
+        <AttributeRow name="Eye Color">{character.eye_color}</AttributeRow>
+        <AttributeRow name="Hair Color">{character.hair_color}</AttributeRow>
+        <AttributeRow name="Height">{character.height}cm</AttributeRow>
+        <AttributeRow name="Mass">{character.mass}kg</AttributeRow>
+        <AttributeRow name="Skin Color">{character.skin_color}</AttributeRow>
+      </div>
+      <div className="flex flex-col p-4 border-2 border-secondary rounded-md bg-background w-full md:w-1/2">
+        <h2 className="text-xl font-bold text-secondary">Bio</h2>
+        <AttributeRow name="Birth Year">{character.birth_year}</AttributeRow>
+        <AttributeRow name="Homeworld">
+          <PlanetCard id={getPlanetId(character.homeworld)} />
+        </AttributeRow>
+        <AttributeRow name="Species">
+          {character.species.length === 0 && "n/a"}
+          {character.species.map((s) => (
+            <SpeciesCard key={s} id={getSpeciesId(s)} />
+          ))}
+        </AttributeRow>
+      </div>
     </div>
   );
 };

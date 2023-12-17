@@ -8,10 +8,10 @@ interface Props {
 const AttributeRow = ({ name, children }: Props) => {
   return (
     <div className="flex space-x-2 p-2">
-      <div className="w-[100px]">
+      <div className="max-md:w-1/2 md:w-[120px]">
         <span className="">{name}:</span>
       </div>
-      <div className="font-bold w-full">{children}</div>
+      <div className="max-md:w-1/2 font-bold w-full">{children}</div>
     </div>
   );
 };
