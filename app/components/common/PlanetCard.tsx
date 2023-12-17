@@ -1,5 +1,6 @@
 import React from "react";
 import { usePlanet } from "@/app/hooks/usePlanet";
+import Spinner from "./Spinner";
 
 interface Props {
   id: number;
@@ -7,6 +8,8 @@ interface Props {
 
 const PlanetCard = ({ id }: Props) => {
   const { data, isLoading } = usePlanet(id);
+
+  if (isLoading) return <Spinner size="sm" />;
 
   return <div>{data?.name}</div>;
 };

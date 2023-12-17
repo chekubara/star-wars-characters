@@ -25,6 +25,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           </main>
           <Footer />
         </ReactQueryProvider>
+        <div id="menu-portal"></div>
       </body>
     </html>
   );

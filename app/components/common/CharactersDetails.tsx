@@ -1,10 +1,10 @@
 "use client";
 
+import { notFound } from "next/navigation";
 import { useCharacter } from "@/app/hooks/useCharacter";
 import { usePlanet } from "@/app/hooks/usePlanet";
 import { getPlanetId } from "@/types/Planet";
 import { getSpeciesId } from "@/types/Species";
-import { notFound } from "next/navigation";
 import PlanetCard from "./PlanetCard";
 import SpeciesCard from "./SpeciesCard";
 import AttributeRow from "./AttributeRow";

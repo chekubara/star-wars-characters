@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { prefetchCharacter, fetchCharacter } from "@/app/hooks/useCharacter";
-import { prefetchPlanet } from "@/app/hooks/usePlanet";
 import HydrationBoundaryProvider from "@/app/components/providers/HydrationBoundryProvider";
 import PageTitle from "@/app/components/common/PageTitle";
 import CharacterDetails from "@/app/components/common/CharactersDetails";
-import { getPlanetId } from "@/types/Planet";
+import { prefetchCharacter, fetchCharacter } from "@/app/hooks/useCharacter";
 import { prefetchSpecies } from "@/app/hooks/useSpecies";
+import { prefetchPlanet } from "@/app/hooks/usePlanet";
+import { getPlanetId } from "@/types/Planet";
 import { getSpeciesId } from "@/types/Species";
 import { slugify } from "@/service/slugify";
 import queryClient from "@/service/queryClient";
