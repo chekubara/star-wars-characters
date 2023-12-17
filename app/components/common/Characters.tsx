@@ -16,8 +16,8 @@ const Characters = ({ page }: Props) => {
   return (
     <>
       <List>
-        {data?.results.map((character, index) => (
-          <ListItem>
+        {data?.results.map((character) => (
+          <ListItem key={character.url}>
             <CharacterCard
               name={character.name}
               id={getCharacterId(character.url)}

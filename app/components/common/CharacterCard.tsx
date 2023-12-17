@@ -49,7 +49,7 @@ const CharacterCard = ({ name, id }: Props) => {
 
   return (
     <>
-      <div
+      <article
         className={`relative ${hovered ? "z-10" : "z-0"} max-md:hidden`}
         style={{ perspective: "1000px" }}
       >
@@ -91,9 +91,9 @@ const CharacterCard = ({ name, id }: Props) => {
             </motion.div>
           </Link>
         </motion.div>
-      </div>
+      </article>
 
-      <div className={`md:hidden`}>
+      <article className={`md:hidden`}>
         <div>
           <Link
             href={`/character/${slugify(name)}/${id}`}
@@ -107,7 +107,7 @@ const CharacterCard = ({ name, id }: Props) => {
             </div>
           </Link>
         </div>
-      </div>
+      </article>
     </>
   );
 };

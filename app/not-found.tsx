@@ -15,7 +15,7 @@ const NotFound = () => {
           className="mb-4 rounded-2xl shadow-xl"
         />
         <p className="text-xl text-primary mb-4">
-          "This isn't the page you're looking for."
+          &quot;This isn&apos;t the page you&apos;re looking for.&quot;
         </p>
         <Link href="/" className="text-secondary hover:underline">
           Return Home

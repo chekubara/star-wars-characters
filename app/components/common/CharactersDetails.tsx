@@ -2,7 +2,6 @@
 
 import { notFound } from "next/navigation";
 import { useCharacter } from "@/app/hooks/useCharacter";
-import { usePlanet } from "@/app/hooks/usePlanet";
 import { getPlanetId } from "@/types/Planet";
 import { getSpeciesId } from "@/types/Species";
 import PlanetCard from "./PlanetCard";
@@ -14,12 +13,11 @@ interface Props {
 }
 
 const CharacterDetails = ({ id }: Props) => {
-  const { data: character, isLoading } = useCharacter(id);
+  const { data: character } = useCharacter(id);
   if (!character) return notFound();
-  const { data: planet } = usePlanet(getPlanetId(character!.homeworld));
 
   return (
-    <div className="flex max-md:flex-col max-md:space-y-4 md:flex-row md:space-x-4">
+    <article className="flex max-md:flex-col max-md:space-y-4 md:flex-row md:space-x-4">
       <div className="flex flex-col p-4 border-2 border-secondary rounded-md bg-background w-full md:w-1/2">
         <h2 className="text-xl font-bold text-secondary">Appearance</h2>
         <AttributeRow name="Gender">{character.gender}</AttributeRow>
@@ -42,7 +40,7 @@ const CharacterDetails = ({ id }: Props) => {
           ))}
         </AttributeRow>
       </div>
-    </div>
+    </article>
   );
 };
 

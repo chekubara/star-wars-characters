@@ -14,7 +14,7 @@ const FavoriteCharacters = () => {
   return (
     <List>
       {favorites.map((character) => (
-        <ListItem>
+        <ListItem key={character.id}>
           <CharacterCard name={character.name} id={character.id} />
         </ListItem>
       ))}
