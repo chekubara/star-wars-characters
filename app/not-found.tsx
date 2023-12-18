@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page not found | Star Wars Characters",
+  description: "This isn&apos;t the page you&apos;re looking for.",
+};
 
 const NotFound = () => {
   return (
