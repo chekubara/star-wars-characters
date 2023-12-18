@@ -7,12 +7,12 @@ import queryClient from "@/service/queryClient";
 
 interface Props {
   params: {
-    page: string;
+    pageNumber: string;
   };
 }
 
 export async function generateMetadata({ params }: Props) {
-  const page = parseInt(params.page);
+  const page = parseInt(params.pageNumber);
 
   if (isNaN(page) || page < 1) notFound();
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
 }
 
 const CharactersPage = async ({ params }: Props) => {
-  const page = parseInt(params.page);
+  const page = parseInt(params.pageNumber);
   await prefetchCharacters(queryClient, page);
 
   return (
