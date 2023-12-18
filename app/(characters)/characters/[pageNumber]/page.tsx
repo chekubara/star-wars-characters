@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { prefetchCharacters } from "@/hooks/useCharacters";
+import { prefetchCharacters } from "@/hooks/api/useCharacters";
 import HydrationBoundaryProvider from "@/components/providers/HydrationBoundryProvider";
 import PageTitle from "@/components/common/PageTitle";
 import Characters from "@/components/common/Characters";

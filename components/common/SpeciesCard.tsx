@@ -1,5 +1,5 @@
 import React from "react";
-import { useSpecies } from "@/hooks/useSpecies";
+import { useSpecies } from "@/hooks/api/useSpecies";
 import Spinner from "./Spinner";
 
 interface Props {

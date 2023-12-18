@@ -3,15 +3,15 @@ import { notFound } from "next/navigation";
 import HydrationBoundaryProvider from "@/components/providers/HydrationBoundryProvider";
 import PageTitle from "@/components/common/PageTitle";
 import CharacterDetails from "@/components/common/CharacterDetails";
-import { prefetchCharacter, fetchCharacter } from "@/hooks/useCharacter";
-import { prefetchSpecies } from "@/hooks/useSpecies";
-import { prefetchPlanet } from "@/hooks/usePlanet";
+import { prefetchCharacter, fetchCharacter } from "@/hooks/api/useCharacter";
 import { getModelId } from "@/service/getModelId";
+import { prefetchSpecies } from "@/hooks/api/useSpecies";
+import { prefetchPlanet } from "@/hooks/api/usePlanet";
+import { prefetchStarship } from "@/hooks/api/useStarship";
+import { prefetchVehicle } from "@/hooks/api/useVehicle";
+import { prefetchFilm } from "@/hooks/api/useFilm";
 import { slugify } from "@/service/slugify";
 import queryClient from "@/service/queryClient";
-import { prefetchStarship } from "@/hooks/useStarship";
-import { prefetchVehicle } from "@/hooks/useVehicle";
-import { prefetchFilm } from "@/hooks/useFilm";
 
 const FavoriteCharacterButton = dynamic(
   () => import("@/components/common/FavoriteCharacterButton"),

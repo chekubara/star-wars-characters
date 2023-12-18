@@ -1,5 +1,5 @@
 import React from "react";
-import { usePlanet } from "@/hooks/usePlanet";
+import { usePlanet } from "@/hooks/api/usePlanet";
 import Spinner from "./Spinner";
 
 interface Props {

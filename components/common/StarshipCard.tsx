@@ -1,5 +1,5 @@
 import React from "react";
-import { useStarship } from "@/hooks/useStarship";
+import { useStarship } from "@/hooks/api/useStarship";
 import Spinner from "./Spinner";
 
 interface Props {

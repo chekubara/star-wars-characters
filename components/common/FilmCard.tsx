@@ -1,5 +1,5 @@
 import React from "react";
-import { useFilm } from "@/hooks/useFilm";
+import { useFilm } from "@/hooks/api/useFilm";
 import Spinner from "./Spinner";
 
 interface Props {

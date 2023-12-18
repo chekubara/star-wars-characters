@@ -1,14 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import { useCharacter } from "@/hooks/useCharacter";
-import PlanetCard from "./PlanetCard";
-import SpeciesCard from "./SpeciesCard";
-import AttributeRow from "./AttributeRow";
-import { getModelId } from "@/service/getModelId";
-import VehicleCard from "./VehicleCard";
-import StarshipCard from "./StarshipCard";
-import FilmCard from "./FilmCard";
+import { useCharacter } from "@/hooks/api/useCharacter";
 import CharacterDetailsAppearance from "./CharacterDetailsAppearance";
 import CharacterDetailsBio from "./CharacterDetailsBio";
 import CharacterDetailsAbilities from "./CharacterDetailsAbilities";
