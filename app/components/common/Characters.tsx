@@ -29,7 +29,7 @@ const Characters = ({ page }: Props) => {
         page={page}
         isPrev={data?.previous !== null}
         isNext={data?.next !== null}
-        url="/page"
+        url="/characters"
         firstPageUrl="/"
       />
     </>

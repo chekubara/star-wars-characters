@@ -5,6 +5,7 @@ const Loading = () => {
   return (
     <>
       <PageTitleSkeleton />
+      <CharacterCardsSkeleton />
     </>
   );
 };
