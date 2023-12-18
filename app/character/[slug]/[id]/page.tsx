@@ -1,21 +1,20 @@
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
-import HydrationBoundaryProvider from "@/app/components/providers/HydrationBoundryProvider";
-import PageTitle from "@/app/components/common/PageTitle";
-import CharacterDetails from "@/app/components/common/CharactersDetails";
-import { prefetchCharacter, fetchCharacter } from "@/app/hooks/useCharacter";
-import { prefetchSpecies } from "@/app/hooks/useSpecies";
-import { prefetchPlanet } from "@/app/hooks/usePlanet";
+import HydrationBoundaryProvider from "@/components/providers/HydrationBoundryProvider";
+import PageTitle from "@/components/common/PageTitle";
+import CharacterDetails from "@/components/common/CharactersDetails";
+import { prefetchCharacter, fetchCharacter } from "@/hooks/useCharacter";
+import { prefetchSpecies } from "@/hooks/useSpecies";
+import { prefetchPlanet } from "@/hooks/usePlanet";
 import { getModelId } from "@/service/getModelId";
 import { slugify } from "@/service/slugify";
 import queryClient from "@/service/queryClient";
-import { prefetchStarship } from "@/app/hooks/useStarship";
-import { prefetchVehicle } from "@/app/hooks/useVehicle";
-import { prefetchFilm } from "@/app/hooks/useFilm";
-import Spinner from "@/app/components/common/Spinner";
+import { prefetchStarship } from "@/hooks/useStarship";
+import { prefetchVehicle } from "@/hooks/useVehicle";
+import { prefetchFilm } from "@/hooks/useFilm";
 
 const FavoriteCharacterButton = dynamic(
-  () => import("@/app/components/common/FavoriteCharacterButton"),
+  () => import("@/components/common/FavoriteCharacterButton"),
   {
     ssr: false,
   }

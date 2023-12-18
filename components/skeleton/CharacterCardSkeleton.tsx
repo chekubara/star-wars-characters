@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Spinner from "../common/Spinner";
+import Spinner from "@/components/common/Spinner";
 
 const CharacterCardSkeleton = () => {
   return (

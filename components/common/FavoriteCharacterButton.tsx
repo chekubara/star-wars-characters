@@ -1,7 +1,7 @@
 "use client";
 
-import useFavoritesStore from "@/app/hooks/useFavoritesStore";
-import FavIcon from "@/app/components/icons/FavIcon";
+import useFavoritesStore from "@/hooks/useFavoritesStore";
+import FavIcon from "@/components/icons/FavIcon";
 
 interface Props {
   id: number;

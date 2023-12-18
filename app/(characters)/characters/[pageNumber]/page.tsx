@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import HydrationBoundaryProvider from "@/app/components/providers/HydrationBoundryProvider";
-import { prefetchCharacters } from "@/app/hooks/useCharacters";
-import PageTitle from "@/app/components/common/PageTitle";
-import Characters from "@/app/components/common/Characters";
+import { prefetchCharacters } from "@/hooks/useCharacters";
+import HydrationBoundaryProvider from "@/components/providers/HydrationBoundryProvider";
+import PageTitle from "@/components/common/PageTitle";
+import Characters from "@/components/common/Characters";
 import queryClient from "@/service/queryClient";
 
 interface Props {

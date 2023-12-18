@@ -1,7 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import { useCharacter } from "@/app/hooks/useCharacter";
+import { useCharacter } from "@/hooks/useCharacter";
 import PlanetCard from "./PlanetCard";
 import SpeciesCard from "./SpeciesCard";
 import AttributeRow from "./AttributeRow";

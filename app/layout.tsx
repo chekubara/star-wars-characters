@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import ReactQueryProvider from "./components/providers/ReactQueryProvider";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import ReactQueryProvider from "@/components/providers/ReactQueryProvider";
 import "./globals.css";
 
 const ubuntu = Ubuntu({ weight: ["300", "500", "700"], subsets: ["latin"] });

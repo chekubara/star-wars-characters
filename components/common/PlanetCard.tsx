@@ -1,17 +1,17 @@
 import React from "react";
-import { useStarship } from "@/app/hooks/useStarship";
+import { usePlanet } from "@/hooks/usePlanet";
 import Spinner from "./Spinner";
 
 interface Props {
   id: number;
 }
 
-const StarshipCard = ({ id }: Props) => {
-  const { data, isLoading } = useStarship(id);
+const PlanetCard = ({ id }: Props) => {
+  const { data, isLoading } = usePlanet(id);
 
   if (isLoading) return <Spinner size="sm" />;
 
   return <div>{data?.name}</div>;
 };
 
-export default StarshipCard;
+export default PlanetCard;

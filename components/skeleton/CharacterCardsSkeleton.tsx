@@ -1,5 +1,5 @@
 import React from "react";
-import { List, ListItem } from "@/app/components/common/List";
+import { List, ListItem } from "@/components/common/List";
 import CharacterCardSkeleton from "./CharacterCardSkeleton";
 import { range } from "@/service/range";
 

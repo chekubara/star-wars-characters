@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useCharacters } from "@/app/hooks/useCharacters";
+import { useCharacters } from "@/hooks/useCharacters";
 import Pagination from "./Pagination";
 import CharacterCard from "./CharacterCard";
 import { List, ListItem } from "./List";

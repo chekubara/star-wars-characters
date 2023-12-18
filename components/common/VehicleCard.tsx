@@ -1,5 +1,5 @@
 import React from "react";
-import { useVehicle } from "@/app/hooks/useVehicle";
+import { useVehicle } from "@/hooks/useVehicle";
 import Spinner from "./Spinner";
 
 interface Props {

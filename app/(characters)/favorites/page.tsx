@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
-import PageTitle from "@/app/components/common/PageTitle";
-import CharacterCardsSkeleton from "../../components/skeleton/CharacterCardsSkeleton";
+import PageTitle from "@/components/common/PageTitle";
+import CharacterCardsSkeleton from "@/components/skeleton/CharacterCardsSkeleton";
 
 const FavoriteCharacters = dynamic(
-  () => import("@/app/components/common/FavoriteCharacters"),
+  () => import("@/components/common/FavoriteCharacters"),
   {
     ssr: false,
     loading: () => <CharacterCardsSkeleton />,

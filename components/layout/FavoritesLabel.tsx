@@ -1,6 +1,6 @@
 "use client";
 
-import useFavoritesStore from "@/app/hooks/useFavoritesStore";
+import useFavoritesStore from "@/hooks/useFavoritesStore";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 

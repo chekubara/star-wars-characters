@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import HamburgerIcon from "../icons/HamburgerIcon";
+import HamburgerIcon from "@/components/icons/HamburgerIcon";
 import MenuPortal from "./MenuPortal";
 
 interface Props {

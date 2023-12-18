@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import useFavoritesStore from "@/app/hooks/useFavoritesStore";
+import useFavoritesStore from "@/hooks/useFavoritesStore";
 import CharacterCard from "./CharacterCard";
 import { List, ListItem } from "./List";
 

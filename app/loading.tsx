@@ -1,5 +1,4 @@
-import PageTitleSkeleton from "@/app/components/skeleton/PageTitleSkeleton";
-import CharacterCardsSkeleton from "@/app/components/skeleton/CharacterCardsSkeleton";
+import PageTitleSkeleton from "@/components/skeleton/PageTitleSkeleton";
 
 const Loading = () => {
   return (
