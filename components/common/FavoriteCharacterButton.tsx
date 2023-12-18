@@ -26,7 +26,7 @@ const FavoriteCharacterButton = ({ id, name }: Props) => {
   return (
     <button
       type="button"
-      className={`flex space-x-2 items-center p-2 border-2 border-${favColor} rounded-xl`}
+      className={`flex space-x-2 items-center p-2 rounded-xl border-2 border-${favColor}`}
       onClick={clickHandler}
       aria-label={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
     >

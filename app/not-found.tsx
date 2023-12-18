@@ -18,9 +18,9 @@ const NotFound = () => {
           width={400}
           height={300}
           priority
-          className="mb-4 rounded-2xl shadow-xl"
+          className="mb-4 rounded-2xl shadow-xl border-secondary border-0"
         />
-        <p className="text-xl text-primary mb-4">
+        <p className="text-xl text-primary mb-4 border-primary border-0">
           &quot;This isn&apos;t the page you&apos;re looking for.&quot;
         </p>
         <Link href="/" className="text-secondary hover:underline">
