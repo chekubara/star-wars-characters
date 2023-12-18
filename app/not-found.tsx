@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Page not found | Star Wars Characters",
-  description: "This isn&apos;t the page you&apos;re looking for.",
+  description: "This isn't the page you're looking for.",
 };
 
 const NotFound = () => {
