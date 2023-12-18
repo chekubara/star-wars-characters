@@ -12,6 +12,7 @@ const FavoriteCharacterButton = ({ id, name }: Props) => {
   const { add, remove, favorites } = useFavoritesStore();
 
   const isFavorite = favorites.find((fav) => fav.id === id);
+  const favColor = isFavorite ? "secondary" : "primary";
 
   const clickHandler = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -25,26 +26,12 @@ const FavoriteCharacterButton = ({ id, name }: Props) => {
   return (
     <button
       type="button"
-      className={
-        isFavorite
-          ? "flex space-x-2 items-center p-2 border-2 border-secondary rounded-xl"
-          : "flex space-x-2 items-center p-2 border-2 border-primary rounded-xl"
-      }
+      className={`flex space-x-2 items-center p-2 border-2 border-${favColor} rounded-xl`}
       onClick={clickHandler}
       aria-label={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
     >
-      <FavIcon
-        className={
-          isFavorite ? "h-4 w-4 text-secondary" : "h-4 w-4 text-primary"
-        }
-      />
-      <span
-        className={
-          isFavorite
-            ? "text-sm font-normal text-secondary"
-            : "text-sm font-normal text-primary"
-        }
-      >
+      <FavIcon className={`h-4 w-4 text-${favColor}`} />
+      <span className={`text-sm font-normal text-${favColor}`}>
         {isFavorite ? "Remove" : "Add"}
       </span>
     </button>

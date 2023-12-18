@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import HydrationBoundaryProvider from "@/components/providers/HydrationBoundryProvider";
 import PageTitle from "@/components/common/PageTitle";
-import CharacterDetails from "@/components/common/CharactersDetails";
+import CharacterDetails from "@/components/common/CharacterDetails";
 import { prefetchCharacter, fetchCharacter } from "@/hooks/useCharacter";
 import { prefetchSpecies } from "@/hooks/useSpecies";
 import { prefetchPlanet } from "@/hooks/usePlanet";
